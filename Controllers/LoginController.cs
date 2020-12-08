@@ -29,7 +29,7 @@ namespace TruYumClient.Controllers
                 return View(model);
             }
             var client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44323");
+            client.BaseAddress = new Uri("https://truyumauth.azurewebsites.net/");
             var jsonstring = JsonConvert.SerializeObject(model);
             var message = new StringContent(jsonstring, System.Text.Encoding.UTF8, "application/json");
             var response = await client.PostAsync("/api/Auth", message);
