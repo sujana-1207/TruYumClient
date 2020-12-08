@@ -1,0 +1,39 @@
+﻿@model TruYumClient.Models.MenuItem
+@{
+    ViewData["Title"] = "ViewMenu";
+}
+<div>
+    <h4>Result</h4>
+    <hr />
+    <table class="table-striped table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Active</th>
+                <th>Date Of Launch</th>
+                <th>Category</th>
+                <th>Eligible for Free Delivery</th>
+                <th> Action </th>
+            </tr>
+        </thead>
+        @foreach (var i in @ViewBag.mod) {
+    <tr>
+        <td>@i.Id</td>
+        <td>@i.Name</td>
+        <td>@i.Price</td>
+        <td>@i.Active</td>
+        <td>@i.DateOfLaunch</td>
+        <td>@i.Category</td>
+        <td>@i.FreeDelivery</td>
+        <td>
+            <a href="@Url.Action("AddToCart", "Cart",new {Id=i.Id,Name=i.Name,Price=i.Price})">
+                <input type='button' value='Add to Cart' />
+            </a>
+        </td>
+    </tr>
+        }
+    </table>
+</div>
+

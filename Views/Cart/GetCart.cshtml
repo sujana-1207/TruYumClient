@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "GetCart";
+}
+
+<h1>GetCart</h1>
+<div>
+    <h4>Result</h4>
+    <hr />
+    <table class="table-striped table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+               
+            </tr>
+        </thead>
+        @foreach (var i in @ViewBag.items)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.Price</td>
+            </tr>
+        }
+    </table>
+</div>
+
+
