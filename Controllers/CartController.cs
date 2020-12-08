@@ -28,7 +28,7 @@ namespace TruYumClient.Controllers
             var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
 
-            client.BaseAddress = new Uri("https://localhost:44301");
+            client.BaseAddress = new Uri("https://truyumcart.azurewebsites.net");
             var jsonstring = JsonConvert.SerializeObject(model);
             var message = new StringContent(jsonstring, System.Text.Encoding.UTF8, "application/json");
             var response = await client.PostAsync("/api/Cart", message);
@@ -49,7 +49,7 @@ namespace TruYumClient.Controllers
             var contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
 
-            client.BaseAddress = new Uri("https://localhost:44301");
+            client.BaseAddress = new Uri("https://truyumcart.azurewebsites.net");
             var response = await client.GetAsync("/api/Cart");
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
@@ -64,79 +64,6 @@ namespace TruYumClient.Controllers
 
 
             }
-            // GET: Cart/Details/5
-            public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Cart/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Cart/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Cart/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Cart/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Cart/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Cart/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
     }
 }
