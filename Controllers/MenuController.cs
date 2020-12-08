@@ -23,7 +23,7 @@ namespace TruYumClient.Controllers
             
             var client = new HttpClient();
 
-            client.BaseAddress = new Uri("https://localhost:44341");
+            client.BaseAddress = new Uri("https://truyummenu.azurewebsites.net/");
             /*var jsonstring = JsonConvert.SerializeObject(model);
             var message = new StringContent(jsonstring, System.Text.Encoding.UTF8, "application/json");
             var id = message.ReadAsStringAsync().Result;*/
